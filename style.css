@@ -1,0 +1,266 @@
+/*
+  Main color palette:
+  - Bright Coral: #FF99CC
+  - White: #FFFFFF
+  - Dark Gray: #333333
+*/
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* --- SLIM, MODERN NAVIGATION BAR --- */
+header {
+  background: #FF99CC; /* Coral background */
+  height: 50px;
+  min-height: 40px;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 50px;
+  /*min-height: 40px;*/
+  padding: 0 24px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 40px;
+  min-width: 120px;
+}
+
+.logo h1 {
+  color: #333333;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.logo h4 {
+  display: flex;
+  align-items: center;
+  font-size: 0.82rem;
+  color: #333333;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 2px;
+  gap: 4px;
+  line-height: 1;
+}
+
+.logo h4 img {
+  width: 18px !important;
+  height: 18px !important;
+  margin-left: 3px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
+
+nav ul li a{
+  color: #333333;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  padding: 0 8px;
+  border-radius: 12px;
+  line-height: 40px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+  background: #333333;
+  color: #FF99CC;
+}
+
+/* =====================
+   HOME SECTION LAYOUT
+   ===================== */
+
+/* Main home section: two columns (left: text, right: image & CTA) */
+section.home {
+  display: flex; /* Enable flex layout */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 40px;
+  background: #fadceb; /* Soft coral-pink background */
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(51, 51, 51, 0.08);
+  gap: 32px;
+}
+
+/* Left column: contains Welcome and What drives me stacked tightly */
+.left-col {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Minimal space between Welcome and What drives me */
+}
+
+/* Welcome message styling */
+.Welcome {
+  margin-bottom: 0px; /* No space below */
+}
+.Welcome h1 {
+  color: #FF99CC;
+  font-size: 1.18rem;
+  margin-bottom: 4px;
+}
+.Welcome p {
+  color: #333333;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* What drives me: directly under Welcome */
+.what-drives-me {
+  margin-top: 0px; /* No space above */
+}
+.what-drives-me h2 {
+  color: #333333;
+  font-size: 1.05rem;
+  margin-bottom: 3px;
+}
+.what-drives-me p {
+  color: #333333;
+  font-size: 0.96rem;
+  margin-bottom: 0;
+}
+
+/* Right column: contains image and CTA stacked */
+.right-col {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align image and CTA to the right */
+  gap: 10px;
+}
+
+/* Profile image styling */
+.mypic {
+  margin-bottom: 0px;
+}
+.mypic img {
+  /*border-radius: 50%;*/
+  width: 400px;
+  height: 400px;}
+  /*object-fit: cover;
+  border: 4px solid #FF99CC;
+  box-shadow: 0 2px 12px rgba(255, 153, 204, 0.10);
+}?*/
+
+/* CTA box: directly under image, compact size */
+.CTA {
+  background: #FF99CC;
+  color: #333333;
+  border-radius: 10px;
+  padding: 15px 20px; /* Smaller padding */
+  margin-top: 8px;
+  box-shadow: 0 1px 6px rgba(255, 153, 204, 0.06);
+  text-align: center;
+  width: 280px;
+  font-size: 0.98rem;
+}
+.CTA h2 {
+  color: #333333;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+.CTA p {
+  color: #333333;
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 900px) {
+  section.home {
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+  }
+  .right-col {
+    align-items: center;
+    width: 100%;
+  }
+  .CTA {
+    width: 100%;
+    max-width: 220px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mypic img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* ============================
+   END HOME SECTION LAYOUT
+   ============================ */
+
+/* Responsive design for mobile */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 0 8px;
+  }
+  nav ul {
+    gap: 8px;
+    justify-content: flex-end;
+    height: auto;
+  }
+  .logo {
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 800px) {
+  /*section.home {
+    flex-direction: column;
+    padding: 16px;
+    gap: 18px;
+  }
+  .mypic {
+    margin: 0 auto 18px auto;
+  }*/
+}
+
+/* --- END NAV STYLES --- */
+/* End of stylesheet */ 
